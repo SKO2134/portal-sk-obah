@@ -1,0 +1,19 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn(){ return request.auth != null; }
+    function userDoc(){ return get(/databases/$(database)/documents/users/$(request.auth.uid)); }
+    function role(){ return signedIn() && userDoc().data.role != null ? userDoc().data.role : 'teacher'; }
+    function manager(){ return role() in ['admin','gb','pkpentadbiran','pkkoku','pkhem']; }
+    match /settings/{id} { allow read: if true; allow write: if manager(); }
+    match /quickLinks/{id} { allow read: if true; allow write: if manager(); }
+    match /announcements/{id} { allow read: if resource.data.published == true || manager(); allow create,update,delete: if manager(); }
+    match /activities/{id} {
+      allow read: if resource.data.status == 'approved' || signedIn();
+      allow create: if signedIn() && request.resource.data.createdBy == request.auth.uid;
+      allow update: if manager();
+      allow delete: if manager() || (signedIn() && resource.data.createdBy == request.auth.uid && resource.data.status == 'pending');
+    }
+    match /users/{uid} { allow read: if signedIn() && (request.auth.uid == uid || manager()); allow write: if role() == 'admin'; }
+  }
+}

@@ -1,0 +1,17 @@
+PORTAL SK OBAH - FAIL SIAP UNTUK GITHUB
+
+1. Buka folder ini.
+2. Pilih SEMUA kandungan di dalam folder (Ctrl+A).
+3. Seret semua kandungan ke GitHub > Add file > Upload files.
+4. Pastikan index.html berada terus di root repositori.
+5. Jangan muat naik fail ZIP ini terus.
+
+Struktur betul:
+index.html
+admin.html
+profil.html
+kurikulum.html
+kokurikulum.html
+hem.html
+pentadbiran.html
+assets/
