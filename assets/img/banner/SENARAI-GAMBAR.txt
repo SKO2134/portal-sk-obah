@@ -1,0 +1,19 @@
+Foto utama:
+- main-udara.webp
+- main-staf-01.webp
+- main-staf-02.webp
+
+Perhimpunan rasmi:
+- perhimpunan-01.webp
+- perhimpunan-02.webp
+
+Aktiviti murid:
+- aktiviti-01.webp
+- aktiviti-02.webp
+
+Kokurikulum:
+- kokurikulum-01.webp
+- kokurikulum-02.webp
+- kokurikulum-03.webp
+
+Semua foto dioptimumkan daripada gambar sebenar yang diberikan pengguna.

@@ -14,25 +14,13 @@
 <div class="topbar"><div class="container"><span>Portal Rasmi Sekolah Kebangsaan Obah, Beluran</span><span id="clock"></span></div></div>
 <nav class="navbar"><div class="container navwrap"><a class="brand" href="index.html"><img src="assets/img/logo.jpg" alt="Logo SK Obah" data-site-logo><span>SK OBAH</span></a><button class="menu-btn" aria-label="Buka menu" aria-expanded="false">☰</button><div class="navlinks"><a class="active" href="index.html">Utama</a><a href="profil.html">Profil</a><a href="pentadbiran.html">Pentadbiran</a><a href="kurikulum.html">Kurikulum</a><a href="kokurikulum.html">Kokurikulum</a><a href="hem.html">HEM</a><a href="#galeri">Galeri</a><a class="btn btn-primary" href="admin.html">Log Masuk Guru</a></div></div></nav>
 
-<!-- BANNER UTAMA: bahagian baharu. Modul lain di bawah dikekalkan. -->
+<!-- BANNER UTAMA 3 PANEL. Modul lain di bawah dikekalkan. -->
 <header class="school-hero" aria-label="Selamat datang ke Portal Digital SK Obah">
-  <div class="hero-slides" aria-hidden="true">
-    <figure class="hero-slide is-active" data-title="Pemandangan udara kampus SK Obah">
-      <picture><source srcset="assets/img/banner/kampus-udara.webp" type="image/webp"><img src="assets/img/banner/kampus-udara.jpg" alt="" fetchpriority="high"></picture>
-    </figure>
-    <figure class="hero-slide" data-title="Aktiviti warga SK Obah">
-      <picture><source srcset="assets/img/banner/aktiviti-01.webp" type="image/webp"><img src="assets/img/banner/aktiviti-01.jpg" alt="" loading="lazy"></picture>
-    </figure>
-    <figure class="hero-slide" data-title="Keceriaan dan kebersamaan sekolah">
-      <picture><source srcset="assets/img/banner/aktiviti-02.webp" type="image/webp"><img src="assets/img/banner/aktiviti-02.jpg" alt="" loading="lazy"></picture>
-    </figure>
-  </div>
-  <div class="hero-shade" aria-hidden="true"></div>
-  <div class="container hero-layout">
-    <div class="hero-copy">
+  <div class="container hero-grid">
+    <section class="hero-copy" aria-labelledby="heroTitle">
       <div class="hero-identity"><img src="assets/img/logo.jpg" alt="Logo Sekolah Kebangsaan Obah"><span>Portal Digital Sekolah</span></div>
-      <p class="hero-kicker">Sekolah Kebangsaan Obah · Beluran, Sabah</p>
-      <h1 data-school-name>SEKOLAH KEBANGSAAN OBAH</h1>
+      <p class="hero-kicker">Beluran, Sabah</p>
+      <h1 id="heroTitle" data-school-name>SEKOLAH KEBANGSAAN OBAH</h1>
       <p class="hero-lead">Pusat maklumat rasmi yang menghubungkan warga sekolah, ibu bapa dan komuniti.</p>
       <div class="hero-cta" aria-label="Pautan utama">
         <a class="hero-button hero-button-primary" href="#dashboard">Dashboard Awam</a>
@@ -40,13 +28,29 @@
         <a class="hero-button hero-button-ghost" href="#hubungi">Hubungi Kami</a>
         <a class="hero-button hero-button-login" href="admin.html">Log Masuk Guru</a>
       </div>
-    </div>
-    <div class="hero-control-panel" aria-label="Kawalan gambar banner">
-      <button class="hero-arrow" type="button" data-hero-prev aria-label="Gambar sebelumnya">‹</button>
-      <div class="hero-dots" role="tablist" aria-label="Pilih gambar banner"></div>
-      <button class="hero-arrow" type="button" data-hero-next aria-label="Gambar seterusnya">›</button>
-      <button class="hero-pause" type="button" data-hero-pause aria-label="Hentikan pertukaran automatik" aria-pressed="false">Jeda</button>
-    </div>
+    </section>
+
+    <section class="feature-rotator" data-rotator data-interval="5000" aria-label="Foto utama sekolah">
+      <figure class="rotator-slide is-active"><img src="assets/img/banner/main-udara.webp" alt="Pemandangan udara Sekolah Kebangsaan Obah" fetchpriority="high"><figcaption><strong>Kampus SK Obah</strong><span>Pemandangan udara sekolah</span></figcaption></figure>
+      <figure class="rotator-slide"><img src="assets/img/banner/main-staf-01.webp" alt="Warga staf Sekolah Kebangsaan Obah" loading="lazy"><figcaption><strong>Warga SK Obah</strong><span>Bersama melakar kecemerlangan</span></figcaption></figure>
+      <figure class="rotator-slide"><img src="assets/img/banner/main-staf-02.webp" alt="Kumpulan staf Sekolah Kebangsaan Obah" loading="lazy"><figcaption><strong>Pasukan Sekolah</strong><span>Komited, prihatin dan progresif</span></figcaption></figure>
+      <div class="feature-controls"><button type="button" data-prev aria-label="Foto utama sebelumnya">‹</button><div class="rotator-dots" data-dots role="tablist" aria-label="Pilih foto utama"></div><button type="button" data-next aria-label="Foto utama seterusnya">›</button></div>
+    </section>
+
+    <aside class="category-stack" aria-label="Sorotan aktiviti sekolah">
+      <article class="category-card" data-rotator data-interval="5400">
+        <div class="category-media"><img class="rotator-slide is-active" src="assets/img/banner/perhimpunan-01.webp" alt="Perhimpunan rasmi SK Obah"><img class="rotator-slide" src="assets/img/banner/perhimpunan-02.webp" alt="Majlis rasmi warga SK Obah" loading="lazy"></div>
+        <div class="category-label"><span>01</span><strong>Perhimpunan Rasmi</strong></div>
+      </article>
+      <article class="category-card" data-rotator data-interval="6200">
+        <div class="category-media"><img class="rotator-slide is-active" src="assets/img/banner/aktiviti-01.webp" alt="Aktiviti pembelajaran murid SK Obah"><img class="rotator-slide" src="assets/img/banner/aktiviti-02.webp" alt="Aktiviti membaca murid SK Obah" loading="lazy"></div>
+        <div class="category-label"><span>02</span><strong>Aktiviti Murid</strong></div>
+      </article>
+      <article class="category-card" data-rotator data-interval="7000">
+        <div class="category-media"><img class="rotator-slide is-active" src="assets/img/banner/kokurikulum-01.webp" alt="Aktiviti kokurikulum SK Obah"><img class="rotator-slide" src="assets/img/banner/kokurikulum-02.webp" alt="Aktiviti luar kokurikulum SK Obah" loading="lazy"><img class="rotator-slide" src="assets/img/banner/kokurikulum-03.webp" alt="Warga kokurikulum SK Obah" loading="lazy"></div>
+        <div class="category-label"><span>03</span><strong>Kokurikulum</strong></div>
+      </article>
+    </aside>
   </div>
 </header>
 
