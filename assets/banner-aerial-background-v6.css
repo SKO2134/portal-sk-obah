@@ -1,0 +1,7 @@
+/* V6: foto udara menjadi latar banner; foto tengah memaparkan staf sahaja. */
+.school-hero{background-image:linear-gradient(90deg,rgba(2,29,53,.93) 0%,rgba(3,48,80,.84) 38%,rgba(4,56,91,.72) 68%,rgba(2,37,67,.78) 100%),linear-gradient(0deg,rgba(1,25,46,.58),transparent 64%),url("img/banner/hero-aerial-bg.webp");background-position:center,center,center 46%;background-size:cover;background-repeat:no-repeat;background-attachment:scroll}
+.school-hero:before{background:radial-gradient(circle at 12% 16%,rgba(32,151,105,.22),transparent 31%),linear-gradient(90deg,rgba(0,19,37,.25),transparent 58%);background-size:auto;mask-image:none}
+.school-hero .hero-copy{align-self:center;padding:42px 30px;border:1px solid rgba(255,255,255,.18);border-radius:27px;background:linear-gradient(145deg,rgba(2,35,62,.72),rgba(3,45,76,.47));box-shadow:0 25px 60px rgba(0,18,35,.24),inset 0 1px rgba(255,255,255,.08);backdrop-filter:blur(9px)}
+.school-hero .hero-copy:before{display:none}.school-hero .feature-rotator,.school-hero .category-card{border-color:rgba(255,255,255,.31)}.school-hero .feature-rotator{background:rgba(2,34,61,.72);backdrop-filter:blur(7px)}.school-hero .category-card{background:rgba(2,34,61,.68)}
+@media(max-width:1180px){.school-hero .hero-copy{padding:30px;border-radius:23px}}
+@media(max-width:720px){.school-hero{background-position:center,center,center top}.school-hero .hero-copy{padding:25px 20px;margin-bottom:17px;background:rgba(2,35,62,.77)}}
