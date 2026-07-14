@@ -1,6 +1,4 @@
 (() => {
-  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
   document.querySelectorAll('[data-rotator]').forEach((rotator) => {
     const slides = [...rotator.querySelectorAll('.rotator-slide')];
     if (slides.length < 2) return;
@@ -31,7 +29,7 @@
 
     function start() {
       clearInterval(timer);
-      if (!reduceMotion && !document.hidden) {
+      if (!document.hidden) {
         timer = setInterval(() => show(current + 1), Number(rotator.dataset.interval) || 5000);
       }
     }
