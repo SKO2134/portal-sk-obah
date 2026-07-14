@@ -1,0 +1,29 @@
+.school-hero{position:relative;isolation:isolate;min-height:clamp(560px,72vh,760px);display:grid;overflow:hidden;background:#073764;color:#fff}
+.hero-slides,.hero-slide,.hero-shade{position:absolute;inset:0}
+.hero-slide{margin:0;opacity:0;transform:scale(1.035);transition:opacity .75s ease,transform 6s ease;pointer-events:none}
+.hero-slide.is-active{opacity:1;transform:scale(1)}
+.hero-slide picture,.hero-slide img{display:block;width:100%;height:100%}
+.hero-slide img{object-fit:cover;object-position:center 48%;filter:saturate(.94) contrast(1.04)}
+.hero-shade{z-index:1;background:linear-gradient(90deg,rgba(2,24,48,.90) 0%,rgba(3,36,68,.76) 42%,rgba(4,38,65,.26) 73%,rgba(3,26,49,.46) 100%),linear-gradient(0deg,rgba(0,22,42,.64),transparent 55%)}
+.hero-layout{position:relative;z-index:2;width:100%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding-top:72px;padding-bottom:82px}
+.hero-copy{max-width:760px;text-shadow:0 2px 20px rgba(0,0,0,.35)}
+.hero-identity{display:inline-flex;align-items:center;gap:12px;padding:8px 14px 8px 8px;border:1px solid rgba(255,255,255,.34);border-radius:999px;background:rgba(3,31,57,.46);backdrop-filter:blur(8px);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.hero-identity img{width:46px;height:46px;border-radius:50%;object-fit:cover;background:#fff;border:2px solid rgba(255,255,255,.88)}
+.hero-kicker{margin:24px 0 8px;color:#ffd56c;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.school-hero h1{max-width:760px;margin:0;font-size:clamp(2.4rem,6.2vw,5.25rem);line-height:.98;letter-spacing:-.035em;text-transform:none;text-wrap:balance}
+.hero-lead{max-width:660px;margin:22px 0 0;font-size:clamp(1rem,2vw,1.25rem);line-height:1.7;color:#f0f6fb}
+.hero-cta{display:flex;flex-wrap:wrap;gap:11px;margin-top:30px}
+.hero-button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 17px;border:1px solid transparent;border-radius:12px;color:#fff;font-weight:800;text-decoration:none;box-shadow:0 8px 28px rgba(0,0,0,.14);transition:transform .18s ease,background .18s ease,border-color .18s ease}
+.hero-button:hover,.hero-button:focus-visible{transform:translateY(-2px)}
+.hero-button-primary{background:#f2bd4a;color:#173553}.hero-button-primary:hover{background:#ffd36e}
+.hero-button-facebook{background:#1877f2}.hero-button-facebook:hover{background:#0f65d5}
+.hero-button-ghost{border-color:rgba(255,255,255,.56);background:rgba(3,33,60,.35)}
+.hero-button-login{background:#1d7a4d}.hero-button-login:hover{background:#12663c}
+.hero-control-panel{position:absolute;z-index:3;left:50%;bottom:24px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;padding:7px 9px;border:1px solid rgba(255,255,255,.22);border-radius:999px;background:rgba(0,25,48,.56);backdrop-filter:blur(10px)}
+.hero-arrow,.hero-pause,.hero-dot{border:0;color:#fff;background:transparent;cursor:pointer}
+.hero-arrow{width:34px;height:34px;border-radius:50%;font-size:1.55rem;line-height:1}.hero-arrow:hover,.hero-arrow:focus-visible{background:rgba(255,255,255,.16)}
+.hero-dots{display:flex;align-items:center;gap:7px}.hero-dot{width:10px;height:10px;padding:0;border-radius:50%;background:rgba(255,255,255,.44)}.hero-dot.is-active{width:26px;border-radius:99px;background:#f2bd4a}
+.hero-pause{padding:6px 10px;border-left:1px solid rgba(255,255,255,.28);font-size:.78rem;font-weight:800}
+@media (max-width:740px){.school-hero{min-height:650px}.hero-shade{background:linear-gradient(0deg,rgba(1,22,43,.92) 0%,rgba(2,31,59,.68) 62%,rgba(3,27,50,.36) 100%)}.hero-layout{justify-content:flex-end;padding-top:70px;padding-bottom:100px}.hero-identity img{width:40px;height:40px}.hero-kicker{margin-top:18px;font-size:.79rem}.school-hero h1{font-size:clamp(2.15rem,11vw,3.4rem)}.hero-lead{font-size:1rem;line-height:1.55}.hero-cta{display:grid;grid-template-columns:1fr 1fr;width:100%}.hero-button{padding:10px 9px;font-size:.88rem;text-align:center}.hero-slide img{object-position:center center}}
+@media (max-width:410px){.hero-cta{grid-template-columns:1fr}.school-hero{min-height:760px}}
+@media (prefers-reduced-motion:reduce){.hero-slide,.hero-button{transition:none}.hero-slide{transform:none}}
