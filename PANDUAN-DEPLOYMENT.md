@@ -38,6 +38,18 @@ Log masuk di `admin.html` → Profil & Banner → tampal pautan Facebook rasmi �
 
 Admin boleh mengurus semua modul. PK hanya boleh mengurus bahagian yang dibenarkan. Guru boleh menghantar aktiviti; kiriman guru berstatus `pending` sehingga diluluskan.
 
+### Ubah paparan portal
+
+Log masuk sebagai admin → **Profil & Banner**. Admin boleh menukar:
+
+- logo dan banner halaman utama;
+- banner Pentadbiran, Kurikulum, Kokurikulum dan HEM;
+- bendera/identiti dan pelan sekolah;
+- warna utama, warna kedua dan warna aksen;
+- tahap gelap pada banner supaya tulisan kekal jelas.
+
+Gunakan JPG, PNG atau WebP sehingga 5MB setiap gambar. Biarkan pilihan fail kosong jika mahu mengekalkan gambar semasa.
+
 ## 6. GitHub Pages
 
 Salin semua fail portal ke root repositori `portal-sk-obah`. Dalam GitHub Desktop, Commit kemudian Push origin. Di GitHub: Settings → Pages → Deploy from a branch → `main` → `/(root)`.
