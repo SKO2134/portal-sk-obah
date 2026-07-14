@@ -1,17 +1,10 @@
-PORTAL SK OBAH - FAIL SIAP UNTUK GITHUB
+PORTAL DIGITAL SK OBAH — MULA DI SINI
 
-1. Buka folder ini.
-2. Pilih SEMUA kandungan di dalam folder (Ctrl+A).
-3. Seret semua kandungan ke GitHub > Add file > Upload files.
-4. Pastikan index.html berada terus di root repositori.
-5. Jangan muat naik fail ZIP ini terus.
+1. Buka PANDUAN-DEPLOYMENT.md.
+2. Masukkan konfigurasi Firebase dalam assets/firebase-config.js.
+3. Terbitkan firestore.rules dan storage.rules dalam Firebase Console.
+4. Salin semua kandungan folder ini ke root repositori portal-sk-obah.
+5. Commit dan Push melalui GitHub Desktop.
+6. Uji index.html (awam) dan admin.html (panel).
 
-Struktur betul:
-index.html
-admin.html
-profil.html
-kurikulum.html
-kokurikulum.html
-hem.html
-pentadbiran.html
-assets/
+Jangan padam folder assets atau ubah susunan fail.

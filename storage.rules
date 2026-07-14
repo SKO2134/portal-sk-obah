@@ -1,11 +1,22 @@
 rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
+    function signedIn() { return request.auth != null; }
+    function me() { return firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data; }
+    function active() { return signedIn() && me().status == 'active'; }
+    function role() { return active() ? me().role : ''; }
+    function leader() { return role() in ['admin','gb']; }
+    function manager() { return role() in ['admin','gb','pk_pentadbiran','pk_kurikulum','pk_kokurikulum','pk_hem']; }
+    function imageOk() { return request.resource.size < 5 * 1024 * 1024 && request.resource.contentType.matches('image/(jpeg|png|webp)'); }
     match /activities/{uid}/{fileName} {
       allow read: if true;
-      allow write: if request.auth != null && request.auth.uid == uid
-                   && request.resource.size < 5 * 1024 * 1024
-                   && request.resource.contentType.matches('image/.*');
+      allow create, update: if active() && request.auth.uid == uid && imageOk();
+      allow delete: if active() && (request.auth.uid == uid || manager());
+    }
+    match /site/{fileName} {
+      allow read: if true;
+      allow create, update: if role() in ['admin','gb','pk_pentadbiran'] && imageOk();
+      allow delete: if leader();
     }
   }
 }
