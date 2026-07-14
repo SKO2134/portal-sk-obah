@@ -1,19 +1,59 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    function signedIn(){ return request.auth != null; }
-    function userDoc(){ return get(/databases/$(database)/documents/users/$(request.auth.uid)); }
-    function role(){ return signedIn() && userDoc().data.role != null ? userDoc().data.role : 'teacher'; }
-    function manager(){ return role() in ['admin','gb','pkpentadbiran','pkkoku','pkhem']; }
-    match /settings/{id} { allow read: if true; allow write: if manager(); }
-    match /quickLinks/{id} { allow read: if true; allow write: if manager(); }
-    match /announcements/{id} { allow read: if resource.data.published == true || manager(); allow create,update,delete: if manager(); }
-    match /activities/{id} {
-      allow read: if resource.data.status == 'approved' || signedIn();
-      allow create: if signedIn() && request.resource.data.createdBy == request.auth.uid;
-      allow update: if manager();
-      allow delete: if manager() || (signedIn() && resource.data.createdBy == request.auth.uid && resource.data.status == 'pending');
+    function signedIn() { return request.auth != null; }
+    function me() { return get(/databases/$(database)/documents/users/$(request.auth.uid)).data; }
+    function active() { return signedIn() && me().status == 'active'; }
+    function role() { return active() ? me().role : ''; }
+    function admin() { return role() == 'admin'; }
+    function leader() { return role() in ['admin','gb']; }
+    function manager() { return role() in ['admin','gb','pk_pentadbiran','pk_kurikulum','pk_kokurikulum','pk_hem']; }
+    function manages(section) {
+      return leader()
+        || (role() == 'pk_pentadbiran' && section in ['pentadbiran','kurikulum'])
+        || (role() == 'pk_kurikulum' && section == 'kurikulum')
+        || (role() == 'pk_kokurikulum' && section == 'kokurikulum')
+        || (role() == 'pk_hem' && section == 'hem');
     }
-    match /users/{uid} { allow read: if signedIn() && (request.auth.uid == uid || manager()); allow write: if role() == 'admin'; }
+    function shortText(v, max) { return v is string && v.size() > 0 && v.size() <= max; }
+
+    match /settings/{id} { allow read: if true; allow write: if role() in ['admin','gb','pk_pentadbiran']; }
+    match /quickLinks/{id} { allow read: if true; allow write: if role() in ['admin','gb','pk_pentadbiran']; }
+    match /announcements/{id} {
+      allow read: if resource.data.published == true || manager();
+      allow create, update: if manager() && shortText(request.resource.data.title, 160);
+      allow delete: if manager();
+    }
+    match /news/{id} {
+      allow read: if resource.data.published == true || manager();
+      allow create, update: if manager() && shortText(request.resource.data.title, 160);
+      allow delete: if manager();
+    }
+    match /events/{id} {
+      allow read: if resource.data.published == true || manager();
+      allow create, update: if manager() && shortText(request.resource.data.title, 160);
+      allow delete: if manager();
+    }
+    match /modules/{id} {
+      allow read: if resource.data.active == true || active();
+      allow create: if manages(request.resource.data.section) && shortText(request.resource.data.title, 100);
+      allow update: if manages(resource.data.section) && manages(request.resource.data.section) && shortText(request.resource.data.title, 100);
+      allow delete: if manages(resource.data.section);
+    }
+    match /activities/{id} {
+      allow read: if resource.data.status == 'approved' || active();
+      allow create: if active()
+        && request.resource.data.createdBy == request.auth.uid
+        && (request.resource.data.status == 'pending'
+          || (request.resource.data.status == 'approved' && manages(request.resource.data.section)))
+        && shortText(request.resource.data.title, 160);
+      allow update: if manages(resource.data.section);
+      allow delete: if manages(resource.data.section)
+        || (active() && resource.data.createdBy == request.auth.uid && resource.data.status == 'pending');
+    }
+    match /users/{uid} {
+      allow read: if active() && (request.auth.uid == uid || admin());
+      allow create, update, delete: if admin();
+    }
   }
 }

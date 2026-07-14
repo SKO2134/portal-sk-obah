@@ -1,19 +1,15 @@
-# Portal Digital SK Obah v4
+# Portal Digital SK Obah
 
-Versi ini mempunyai portal awam dan panel pentadbir sebenar berasaskan Firebase.
+Portal statik production-ready untuk GitHub Pages dengan Firebase Authentication, Firestore dan Storage.
 
-## Boleh diurus melalui panel web
-- Profil sekolah
-- Pengumuman: tambah, edit dan padam
-- Quick Access: tambah, edit, tutup dan padam
-- Aktiviti/galeri: muat naik, lulus dan padam
-- Paparan jumlah kandungan dan item menunggu kelulusan
+## Fungsi
 
-## Fail utama
-- `index.html` — portal awam
-- `admin.html` — panel pentadbir/guru
-- `assets/firebase-config.js` — konfigurasi Firebase
-- `firestore.rules` dan `storage.rules` — peraturan keselamatan
-- `PANDUAN-FIREBASE.md` — pemasangan langkah demi langkah
+- Portal awam, profil dan galeri
+- Dashboard manual-scroll Pentadbiran, Kurikulum, Kokurikulum dan HEM
+- Pengumuman, berita, takwim, Quick Access dan Facebook rasmi
+- Panel admin, Guru Besar, PK dan guru
+- Kelulusan aktiviti guru sebelum paparan awam
+- Pengurusan banner dan kandungan melalui web
+- Firebase security rules dan akses mengikut peranan
 
-Tanpa Firebase, portal awam masih boleh dibuka tetapi fungsi simpan/edit dalam panel tidak aktif.
+Mulakan dengan `PANDUAN-DEPLOYMENT.md`. Konfigurasi Firebase berada dalam `assets/firebase-config.js`.
