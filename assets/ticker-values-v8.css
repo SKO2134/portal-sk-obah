@@ -1,0 +1,37 @@
+/* V8: ticker nilai utama sekolah. */
+.values-ticker{
+  position:relative;isolation:isolate;overflow:hidden;
+  border-top:1px solid rgba(255,255,255,.3);border-bottom:1px solid rgba(5,47,86,.14);
+  background:linear-gradient(90deg,#eeb936,#ffd86f 42%,#f5c34f 72%,#eeb936);
+  box-shadow:0 8px 22px rgba(5,47,86,.12)
+}
+.values-ticker:before,.values-ticker:after{
+  content:"";position:absolute;z-index:2;top:0;bottom:0;width:84px;pointer-events:none
+}
+.values-ticker:before{left:0;background:linear-gradient(90deg,#eeb936,transparent)}
+.values-ticker:after{right:0;background:linear-gradient(270deg,#eeb936,transparent)}
+.values-track{
+  display:flex;align-items:center;width:max-content;padding:13px 0;
+  animation:tickerValues 22s linear infinite;will-change:transform
+}
+.values-track span{
+  display:inline-flex;align-items:center;gap:13px;padding:0 56px 0 0;
+  color:#082f51;font-size:clamp(.86rem,1.15vw,1.04rem);font-weight:950;
+  letter-spacing:.12em;white-space:nowrap;text-shadow:0 1px rgba(255,255,255,.48)
+}
+.values-track strong{font-weight:950;animation:valueEmphasis 2.8s ease-in-out infinite}
+.values-track i{
+  width:10px;height:10px;border:2px solid rgba(255,255,255,.78);border-radius:50%;
+  background:#167b53;box-shadow:0 0 0 4px rgba(22,123,83,.13)
+}
+.values-ticker:hover .values-track{animation-play-state:paused}
+@keyframes tickerValues{to{transform:translateX(-50%)}}
+@keyframes valueEmphasis{0%,100%{opacity:.86}50%{opacity:1;filter:brightness(1.08)}}
+@media(max-width:640px){
+  .values-track{padding:11px 0;animation-duration:17s}
+  .values-track span{padding-right:38px;gap:10px;letter-spacing:.085em}
+  .values-ticker:before,.values-ticker:after{width:40px}
+}
+@media(prefers-reduced-motion:reduce){
+  .values-track{animation-duration:55s}.values-track strong{animation:none}
+}
