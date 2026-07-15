@@ -1,12 +1,42 @@
 /* Animasi khas banner: kekal aktif walaupun sistem menggunakan reduced motion. */
-.school-hero .rotator-slide{z-index:1;opacity:0;transform:scale(1.055);transition:opacity 1.15s cubic-bezier(.22,.61,.36,1),transform 6s cubic-bezier(.18,.72,.3,1);will-change:opacity,transform}
-.school-hero .rotator-slide.is-active{z-index:2;opacity:1;transform:scale(1)}
-.school-hero .feature-rotator .rotator-slide.is-active img{animation:mainPhotoDrift 5s ease-out both}
-.school-hero .category-card .rotator-slide.is-active{animation:categoryPhotoReveal 1.15s cubic-bezier(.22,.61,.36,1) both}
-@keyframes mainPhotoDrift{from{transform:scale(1.035)}to{transform:scale(1)}}
-@keyframes categoryPhotoReveal{from{opacity:0;transform:scale(1.065)}to{opacity:1;transform:scale(1)}}
+.school-hero .rotator-slide{
+  z-index:1;
+  opacity:0;
+  transform:scale(1.055);
+  transition:
+    opacity 1.15s cubic-bezier(.22,.61,.36,1),
+    transform 6s cubic-bezier(.18,.72,.3,1);
+  will-change:opacity,transform;
+}
+.school-hero .rotator-slide.is-active{
+  z-index:2;
+  opacity:1;
+  transform:scale(1);
+}
+.school-hero .feature-rotator .rotator-slide.is-active img{
+  animation:mainPhotoDrift 5s ease-out both;
+}
+.school-hero .category-card .rotator-slide.is-active{
+  animation:categoryPhotoReveal 1.15s cubic-bezier(.22,.61,.36,1) both;
+}
+@keyframes mainPhotoDrift{
+  from{transform:scale(1.035)}
+  to{transform:scale(1)}
+}
+@keyframes categoryPhotoReveal{
+  from{opacity:0;transform:scale(1.065)}
+  to{opacity:1;transform:scale(1)}
+}
 @media (prefers-reduced-motion:reduce){
-  .school-hero .rotator-slide{transition:opacity 1.15s cubic-bezier(.22,.61,.36,1),transform 6s cubic-bezier(.18,.72,.3,1) !important}
-  .school-hero .feature-rotator .rotator-slide.is-active img{animation:mainPhotoDrift 5s ease-out both !important}
-  .school-hero .category-card .rotator-slide.is-active{animation:categoryPhotoReveal 1.15s cubic-bezier(.22,.61,.36,1) both !important}
+  .school-hero .rotator-slide{
+    transition:
+      opacity 1.15s cubic-bezier(.22,.61,.36,1),
+      transform 6s cubic-bezier(.18,.72,.3,1) !important;
+  }
+  .school-hero .feature-rotator .rotator-slide.is-active img{
+    animation:mainPhotoDrift 5s ease-out both !important;
+  }
+  .school-hero .category-card .rotator-slide.is-active{
+    animation:categoryPhotoReveal 1.15s cubic-bezier(.22,.61,.36,1) both !important;
+  }
 }
