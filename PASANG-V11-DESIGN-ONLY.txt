@@ -1,0 +1,50 @@
+PORTAL DIGITAL SK OBAH — V11 DESIGN ONLY
+========================================
+
+VERSI INI MENUKAR REKA BENTUK SAHAJA.
+Fungsi V10, Firebase, panel admin, ticker, galeri, berita, modul dan peranan pengguna dikekalkan.
+
+CARA PASANG MELALUI GITHUB DESKTOP
+----------------------------------
+
+1. Pastikan portal semasa masih berfungsi sebagai V10.
+2. Buka folder V11-DESIGN-ONLY ini.
+3. Salin semua kandungan di dalam folder.
+4. Tampal ke folder GitHub Desktop:
+   Documents\GitHub\portal-sk-obah
+5. Pilih "Replace the files in the destination" jika diminta.
+6. Buka GitHub Desktop.
+7. Pastikan perubahan utama hanya:
+   - assets\design-v11.css (fail baharu)
+   - assets\visual-settings.css
+   - index.html
+8. Pada Summary, tulis:
+   Pasang V11 Design Only
+9. Klik "Commit to main".
+10. Klik "Push origin".
+11. Tunggu 1–3 minit dan buka:
+    https://sko2134.github.io/portal-sk-obah/
+12. Tekan Ctrl + F5.
+
+CARA KEMBALI KE V10
+-------------------
+
+Jika tidak mahu reka bentuk V11:
+1. Dalam GitHub Desktop, buka History.
+2. Klik kanan commit "Pasang V11 Design Only".
+3. Pilih "Revert changes in commit".
+4. Klik "Push origin".
+
+FAIL FUNGSI YANG TIDAK DIUBAH
+-----------------------------
+
+- assets\app.js
+- assets\interactive-home.js
+- assets\admin.js
+- assets\firebase-config.js
+- assets\module-detail.js
+- assets\banner-rotate-v7.js
+- firestore.rules
+- storage.rules
+
+Kredit halus "Dibangunkan oleh Jerremaya Jeffry" kekal di footer.
