@@ -1,6 +1,6 @@
 import { firebaseConfig, firebaseReady } from './firebase-config.js';
 import './interactive-home.js';
-import './hero-gallery.js';
+import './drive-documents.js';
 document.head.insertAdjacentHTML('beforeend','<link rel="stylesheet" href="assets/visual-settings.css">');
 
 const defaults = {
