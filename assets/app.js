@@ -1,5 +1,6 @@
 import { firebaseConfig, firebaseReady } from './firebase-config.js';
 import './interactive-home.js';
+import './drive-documents.js';
 document.head.insertAdjacentHTML('beforeend','<link rel="stylesheet" href="assets/visual-settings.css">');
 
 const defaults = {
@@ -20,8 +21,8 @@ const defaults = {
   ],
   modules: {
     pentadbiran:[['Carta Organisasi','Struktur kepimpinan sekolah','🏫'],['Takwim Sekolah','Perancangan dan aktiviti tahunan','📅'],['Pekeliling','Makluman serta rujukan rasmi','📄'],['Muat Turun Borang','Borang kegunaan warga sekolah','📥']],
-    kurikulum:[['Panitia','Pengurusan mata pelajaran','📚'],['PBD','Pentaksiran Bilik Darjah','📊'],['PLC','Komuniti pembelajaran profesional','🤝'],['Program Akademik','Intervensi dan kecemerlangan murid','🎓'],['Jadual Waktu','Maklumat jadual persekolahan','🗓️'],['Pentaksiran','Maklumat pentaksiran sekolah','✅']],
-    kokurikulum:[['PAJSK','Pentaksiran aktiviti jasmani, sukan dan kokurikulum','📊'],['SEGAK','Standard Kecergasan Fizikal Kebangsaan','🏃'],['Unit Beruniform','Aktiviti dan pencapaian unit','🎖️'],['Kelab & Persatuan','Aktiviti kelab dan persatuan','👥'],['Sukan & Permainan','Program sukan sekolah','⚽'],['Kejohanan','Penyertaan dan pencapaian','🏆']],
+    kurikulum:[['Panitia','Pengurusan mata pelajaran','📚'],['PBD','Pentaksiran Bilik Darjah','📊'],['SEGAK','Standard Kecergasan Fizikal Kebangsaan','🏃'],['PLC','Komuniti pembelajaran profesional','🤝'],['Program Akademik','Intervensi dan kecemerlangan murid','🎓'],['Jadual Waktu','Maklumat jadual persekolahan','🗓️'],['Pentaksiran','Maklumat pentaksiran sekolah','✅']],
+    kokurikulum:[['PAJSK','Pentaksiran aktiviti jasmani, sukan dan kokurikulum','📊'],['Unit Beruniform','Aktiviti dan pencapaian unit','🎖️'],['Kelab & Persatuan','Aktiviti kelab dan persatuan','👥'],['Sukan & Permainan','Program sukan sekolah','⚽'],['Kejohanan','Penyertaan dan pencapaian','🏆']],
     hem:[['Kebajikan','Bantuan dan kebajikan murid','💚'],['SPBT','Pengurusan buku teks','📘'],['RMT','Program Rancangan Makanan Tambahan','🍽️'],['Kesihatan','Program kesihatan murid','🩺'],['Bimbingan & Kaunseling','Sokongan perkembangan murid','🤝'],['3K','Kebersihan, kesihatan dan keselamatan','🛡️']]
   }
 };
