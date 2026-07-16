@@ -39,7 +39,7 @@ function bindChrome(){
   const clock=document.querySelector('#clock'); const tick=()=>{if(clock)clock.textContent=new Date().toLocaleString('ms-MY',{dateStyle:'medium',timeStyle:'short'})}; tick();setInterval(tick,30000);
   const btn=document.querySelector('.menu-btn'), nav=document.querySelector('.navlinks'); btn?.addEventListener('click',()=>{const open=nav?.classList.toggle('open');btn.setAttribute('aria-expanded',String(!!open))});
   document.querySelectorAll('[data-scroll]').forEach(btn=>btn.addEventListener('click',()=>{const rail=document.getElementById(btn.dataset.scroll);rail?.scrollBy({left:Number(btn.dataset.direction||1)*Math.min(rail.clientWidth*.8,650),behavior:'smooth'})}));
-  const dashboard=document.querySelector('#dashboard'),ticker=document.querySelector('.values-ticker'),statistics=document.querySelector('.school-statistics'),leadership=document.querySelector('.leadership-section');if(dashboard&&ticker&&statistics&&leadership)leadership.before(dashboard,ticker,statistics);
+  const dashboard=document.querySelector('#dashboard'),ticker=document.querySelector('.values-ticker'),statistics=document.querySelector('.school-statistics'),leadership=document.querySelector('.leadership-section');if(dashboard&&ticker&&statistics&&leadership){leadership.before(ticker,statistics);leadership.after(dashboard)}
 }
 const statisticFields={students:'totalStudents',teachers:'totalTeachers',staff:'totalStaff',preschool:'totalPreschool'};
 const statisticAnimations=new WeakMap();
