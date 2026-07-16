@@ -11,11 +11,11 @@
 .statistics-icon{grid-row:1/-1;font-size:1.35rem;line-height:1}
 .statistics-card strong{color:#fff;font-size:clamp(1.45rem,2.5vw,2rem);font-variant-numeric:tabular-nums;line-height:1}
 .statistics-card>span:last-child{align-self:start;color:rgba(255,255,255,.8);font-size:.7rem;font-weight:800;line-height:1.25}
-.achievement-note{grid-column:2;display:flex;align-items:flex-start;gap:11px;padding:10px 14px;border:1px solid rgba(246,209,95,.4);border-radius:14px;background:rgba(246,209,95,.12)}
-.achievement-note>span{font-size:1.25rem}.achievement-note strong{display:block;color:#f8d467;font-size:.76rem}.achievement-note p{margin:2px 0 0;color:rgba(255,255,255,.86);font-size:.78rem;line-height:1.45}
+.achievement-note{grid-column:2;display:flex;align-items:center;gap:14px;min-height:74px;padding:14px 18px;border:1px solid rgba(246,209,95,.48);border-radius:16px;background:rgba(246,209,95,.14);overflow:hidden}
+.achievement-note>span{font-size:1.55rem}.achievement-note>div{min-width:0}.achievement-note strong{display:block;color:#f8d467;font-size:.86rem}.achievement-note p{min-height:1.55em;margin:3px 0 0;color:#fff;font-size:.96rem;font-weight:650;line-height:1.55;transition:opacity .36s ease,transform .36s ease}.achievement-note p.is-exiting{opacity:0;transform:translateY(-14px)}.achievement-note p.is-entering{opacity:0;transform:translateY(14px)}
 @media(max-width:900px){.statistics-layout{grid-template-columns:1fr}.statistics-heading{text-align:center}.achievement-note{grid-column:1}.statistics-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:580px){.school-statistics{padding:24px 0}.statistics-grid{gap:8px}.statistics-card{min-height:76px;padding:11px 10px}.statistics-icon{font-size:1.15rem}.achievement-note p{font-size:.74rem}}
-@media(prefers-reduced-motion:reduce){.statistics-card{transition:none}}
+@media(max-width:580px){.school-statistics{padding:24px 0}.statistics-grid{gap:8px}.statistics-card{min-height:76px;padding:11px 10px}.statistics-icon{font-size:1.15rem}.achievement-note{min-height:82px;padding:13px 14px}.achievement-note p{font-size:.84rem}}
+@media(prefers-reduced-motion:reduce){.statistics-card,.achievement-note p{transition:none}}
 #dashboard.dashboard-compact{padding:34px 0;background:#eef3f9}
 #dashboard.dashboard-compact .section-head{align-items:center;margin-bottom:18px}
 #dashboard.dashboard-compact .section-head>div{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
