@@ -16,3 +16,15 @@
 @media(max-width:900px){.statistics-layout{grid-template-columns:1fr}.statistics-heading{text-align:center}.achievement-note{grid-column:1}.statistics-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:580px){.school-statistics{padding:24px 0}.statistics-grid{gap:8px}.statistics-card{min-height:76px;padding:11px 10px}.statistics-icon{font-size:1.15rem}.achievement-note p{font-size:.74rem}}
 @media(prefers-reduced-motion:reduce){.statistics-card{transition:none}}
+#dashboard.dashboard-compact{padding:34px 0;background:#eef3f9}
+#dashboard.dashboard-compact .section-head{align-items:center;margin-bottom:18px}
+#dashboard.dashboard-compact .section-head>div{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+#dashboard.dashboard-compact .section-head h2{font-size:clamp(1.45rem,2.3vw,2rem)}
+#dashboard.dashboard-compact .section-sub{margin:0;font-size:.86rem}
+#dashboard.dashboard-compact .grid-4{gap:10px}
+#dashboard.dashboard-compact .card{display:grid;grid-template-columns:42px minmax(0,1fr);grid-template-rows:auto auto;column-gap:12px;align-items:center;min-height:105px;padding:16px 18px;border-radius:16px;box-shadow:0 9px 24px rgba(13,56,91,.08)}
+#dashboard.dashboard-compact .card .icon{grid-row:1/-1;display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:#edf5fc;font-size:1.35rem}
+#dashboard.dashboard-compact .card h3{margin:0;font-size:.92rem}
+#dashboard.dashboard-compact .card p{align-self:start;margin:3px 0 0;font-size:.72rem;line-height:1.4}
+@media(max-width:900px){#dashboard.dashboard-compact .grid-4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){#dashboard.dashboard-compact{padding:28px 0}#dashboard.dashboard-compact .section-head>div{display:block}#dashboard.dashboard-compact .section-sub{margin-top:5px}#dashboard.dashboard-compact .grid-4{grid-template-columns:1fr}#dashboard.dashboard-compact .card{min-height:92px}}
