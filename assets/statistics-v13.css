@@ -28,7 +28,7 @@
 #dashboard.dashboard-compact .card p{align-self:start;margin:3px 0 0;font-size:.72rem;line-height:1.4}
 @media(max-width:900px){#dashboard.dashboard-compact .grid-4{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:580px){#dashboard.dashboard-compact{padding:28px 0}#dashboard.dashboard-compact .section-head>div{display:block}#dashboard.dashboard-compact .section-sub{margin-top:5px}#dashboard.dashboard-compact .grid-4{grid-template-columns:1fr}#dashboard.dashboard-compact .card{min-height:92px}}
-.school-hero,.values-ticker{width:min(1280px,92%);max-width:1280px;margin-left:auto;margin-right:auto}
-.school-hero{margin-top:0;border-radius:24px}
-.values-ticker{margin-top:12px;border-radius:14px}
-@media(max-width:940px){.school-hero,.values-ticker{width:92%}}
+.school-hero,.values-ticker,.school-statistics{width:100%;max-width:none;margin-left:0;margin-right:0;border-radius:0}
+.school-hero{margin-top:0}
+.values-ticker{margin-top:0}
+@media(max-width:940px){.school-hero,.values-ticker,.school-statistics{width:100%}}
