@@ -45,7 +45,8 @@ service cloud.firestore {
       allow create: if active()
         && request.resource.data.createdBy == request.auth.uid
         && (request.resource.data.status == 'pending'
-          || (request.resource.data.status == 'approved' && manages(request.resource.data.section)))
+          || (request.resource.data.status == 'approved'
+            && (request.resource.data.section == 'pentadbiran' || manages(request.resource.data.section))))
         && shortText(request.resource.data.title, 160);
       allow update: if manages(resource.data.section);
       allow delete: if manages(resource.data.section)

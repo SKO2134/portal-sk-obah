@@ -7,7 +7,7 @@ function doPost(e) {
   try {
     var body = JSON.parse((e.postData && e.postData.contents) || '{}');
     var identity = verifyFirebaseUser_(body.token);
-    if (body.action === 'delete') return json_(deleteFile_(body.fileId, identity));
+    if (body.action === 'delete') return json_(deleteFile_(body.fileId, identity, body.folderKey));
     return json_(uploadFile_(body, identity));
   } catch (error) {
     return json_({ ok: false, error: String(error.message || error) });
@@ -39,17 +39,17 @@ function uploadFile_(body, identity) {
   if (!body.base64) throw new Error('Data gambar tidak diterima.');
   var bytes = Utilities.base64Decode(body.base64);
   if (bytes.length > 5 * 1024 * 1024) throw new Error('Saiz gambar melebihi 5MB.');
-  var folder = getFolder_();
+  var folder = getUploadFolder_(body.folderKey);
   var safeName = String(body.fileName || ('aktiviti-' + Date.now())).replace(/[^a-zA-Z0-9._-]/g, '_');
   var file = folder.createFile(Utilities.newBlob(bytes, body.mimeType, Date.now() + '-' + safeName));
   file.setDescription('portal-sk-obah:' + identity.uid);
   return { ok: true, fileId: file.getId(), url: 'https://drive.google.com/uc?export=view&id=' + encodeURIComponent(file.getId()) };
 }
 
-function deleteFile_(fileId, identity) {
+function deleteFile_(fileId, identity, folderKey) {
   if (!fileId) throw new Error('ID fail tidak diterima.');
   var file = DriveApp.getFileById(fileId);
-  var folder = getFolder_();
+  var folder = getUploadFolder_(folderKey);
   var inFolder = false;
   var parents = file.getParents();
   while (parents.hasNext()) if (parents.next().getId() === folder.getId()) inFolder = true;
@@ -64,6 +64,16 @@ function getFolder_() {
   var id = PropertiesService.getScriptProperties().getProperty('DRIVE_FOLDER_ID');
   if (!id) throw new Error('DRIVE_FOLDER_ID belum ditetapkan.');
   return DriveApp.getFolderById(id);
+}
+
+function getUploadFolder_(folderKey) {
+  var props = PropertiesService.getScriptProperties();
+  if (folderKey === 'pentadbiran') {
+    var pentadbiranId = props.getProperty('PENTADBIRAN_FOLDER_ID');
+    if (!pentadbiranId) throw new Error('PENTADBIRAN_FOLDER_ID belum ditetapkan.');
+    return DriveApp.getFolderById(pentadbiranId);
+  }
+  return getFolder_();
 }
 
 function json_(value) {

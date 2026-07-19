@@ -16,6 +16,7 @@ Firebase Authentication kekal mengawal log masuk. Firestore menyimpan tajuk, ket
    - `DRIVE_FOLDER_ID`: ID folder Drive.
    - `FIREBASE_API_KEY`: nilai `apiKey` dalam `assets/firebase-config.js`.
    - `FIREBASE_PROJECT_ID`: `portal-sk-obah`.
+   - `PENTADBIRAN_FOLDER_ID`: ID folder `01 PENTADBIRAN`.
 
 ## 3. Deploy Web App
 
