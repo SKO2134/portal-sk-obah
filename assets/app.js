@@ -1,5 +1,5 @@
 import { firebaseConfig, firebaseReady } from './firebase-config.js';
-import './interactive-home.js';
+import './interactive-home.js?v=15.3';
 document.head.insertAdjacentHTML('beforeend','<link rel="stylesheet" href="assets/visual-settings.css">');
 
 const defaults = {

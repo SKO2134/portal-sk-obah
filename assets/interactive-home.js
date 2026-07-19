@@ -1,7 +1,7 @@
 const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const configs=[
   {id:'newsList',label:'Berita sekolah',interval:5200},
-  {id:'publicGallery',label:'Galeri aktiviti',interval:4300}
+  {id:'publicGallery',label:'Galeri aktiviti',interval:3600,forceMotion:true}
 ];
 
 function move(rail,direction){
@@ -22,6 +22,16 @@ function move(rail,direction){
 function addControls(rail,config){
   const section=rail.closest('.section');
   const head=section?.querySelector('.section-head');
+  const existing=section?.querySelector(`[data-controls="${config.id}"]`);
+  if(existing){
+    if(!existing.dataset.controlsReady){
+      existing.dataset.controlsReady='true';
+      const [prev,next]=existing.querySelectorAll('button');
+      prev?.addEventListener('click',()=>move(rail,-1));
+      next?.addEventListener('click',()=>move(rail,1));
+    }
+    return;
+  }
   if(!head||head.querySelector(`[data-controls="${config.id}"]`))return;
   const controls=document.createElement('div');
   controls.className='carousel-controls';controls.dataset.controls=config.id;
@@ -30,7 +40,7 @@ function addControls(rail,config){
 }
 
 function enableAuto(rail,config){
-  if(reduceMotion||rail.dataset.autoReady)return;rail.dataset.autoReady='true';let timer;
+  if((reduceMotion&&!config.forceMotion)||rail.dataset.autoReady)return;rail.dataset.autoReady='true';let timer;
   const start=()=>{clearInterval(timer);timer=setInterval(()=>{if(!document.hidden)move(rail,1)},config.interval)};
   const stop=()=>clearInterval(timer);
   rail.addEventListener('mouseenter',stop);rail.addEventListener('mouseleave',start);
