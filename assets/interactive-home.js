@@ -5,14 +5,18 @@ const configs=[
 ];
 
 function move(rail,direction){
-  const card=rail.querySelector(':scope > article');
-  const gap=parseFloat(getComputedStyle(rail).gap)||18;
-  const distance=(card?.getBoundingClientRect().width||320)+gap;
+  const cards=[...rail.querySelectorAll(':scope > article')];
   const atEnd=rail.scrollLeft+rail.clientWidth>=rail.scrollWidth-12;
   const atStart=rail.scrollLeft<=12;
   if(direction>0&&atEnd)rail.scrollTo({left:0,behavior:'smooth'});
   else if(direction<0&&atStart)rail.scrollTo({left:rail.scrollWidth,behavior:'smooth'});
-  else rail.scrollBy({left:distance*direction,behavior:'smooth'});
+  else{
+    const positions=cards.map(card=>card.offsetLeft-rail.offsetLeft);
+    const target=direction>0
+      ?positions.find(position=>position>rail.scrollLeft+12)
+      :positions.reverse().find(position=>position<rail.scrollLeft-12);
+    rail.scrollTo({left:target??(direction>0?rail.scrollWidth:0),behavior:'smooth'});
+  }
 }
 
 function addControls(rail,config){
