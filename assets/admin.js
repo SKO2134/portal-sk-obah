@@ -1,5 +1,5 @@
 import { firebaseConfig, firebaseReady } from './firebase-config.js';
-import { googleDriveUploadUrl, googleDriveReady } from './google-drive-config.js';
+import { googleDriveUploadUrl, googleDriveReady } from './google-drive-config.js?v=1.1';
 document.head.insertAdjacentHTML('beforeend','<link rel="stylesheet" href="assets/visual-settings.css"><style>.achievement-input-list{display:grid;gap:10px;margin:10px 0}.achievement-input-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center}.achievement-input-row .btn{padding:10px 13px}@media(max-width:640px){.achievement-input-row{grid-template-columns:1fr}.achievement-input-row .btn{justify-self:start}}</style>');
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];let auth,db,storage,FS,ST,user,profile={},rows={announcements:[],news:[],events:[],modules:[],quickLinks:[],activities:[],users:[]};
 const aliases={teacher:'guru',pkpentadbiran:'pk_pentadbiran',pkkurikulum:'pk_kurikulum',pkkoku:'pk_kokurikulum',pkhem:'pk_hem'};const role=()=>aliases[profile.role]||profile.role||'guru';
