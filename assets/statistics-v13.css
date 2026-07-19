@@ -5,7 +5,7 @@
 .statistics-heading{text-align:left}
 .statistics-heading p{margin:0 0 5px;color:#f6d15f;font-size:.66rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase}
 .statistics-heading h2{margin:0;font-size:clamp(1.25rem,2vw,1.65rem);line-height:1.1}
-.statistics-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.statistics-grid{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
 .statistics-card{display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;column-gap:10px;align-items:center;min-width:0;min-height:82px;padding:13px 14px;border:1px solid rgba(255,255,255,.2);border-radius:16px;background:rgba(255,255,255,.1);box-shadow:0 10px 24px rgba(1,27,49,.16);backdrop-filter:blur(7px);transition:transform .25s ease,background .25s ease}
 .statistics-card:hover{transform:translateY(-3px);background:rgba(255,255,255,.16)}
 .statistics-icon{grid-row:1/-1;font-size:1.35rem;line-height:1}
