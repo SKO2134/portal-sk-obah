@@ -14,6 +14,7 @@ Firebase Authentication kekal mengawal log masuk. Firestore menyimpan tajuk, ket
 2. Salin seluruh kandungan `google-drive-upload.gs` ke fail `Code.gs`.
 3. Buka **Project Settings → Script Properties** dan tambah:
    - `DRIVE_FOLDER_ID`: ID folder Drive.
+   - `PORTAL_MEDIA_FOLDER_ID`: `1okSDn88WJNYUSQe7YZB6C7o2oaCs_wPq` — folder khas untuk logo, banner, foto pentadbir dan imej paparan portal.
    - `FIREBASE_API_KEY`: nilai `apiKey` dalam `assets/firebase-config.js`.
    - `FIREBASE_PROJECT_ID`: `portal-sk-obah`.
    - `PENTADBIRAN_FOLDER_ID`: ID folder `01 PENTADBIRAN`.

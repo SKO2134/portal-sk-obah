@@ -1,7 +1,7 @@
 /**
  * Backend muat naik Galeri SK Obah ke Google Drive.
  * Script Properties yang diperlukan:
- * DRIVE_FOLDER_ID, FIREBASE_API_KEY, FIREBASE_PROJECT_ID
+ * DRIVE_FOLDER_ID, PORTAL_MEDIA_FOLDER_ID, FIREBASE_API_KEY, FIREBASE_PROJECT_ID
  */
 function doPost(e) {
   try {
@@ -68,6 +68,10 @@ function getFolder_() {
 
 function getUploadFolder_(folderKey) {
   var props = PropertiesService.getScriptProperties();
+  if (folderKey === 'portal_media') {
+    var portalMediaId = props.getProperty('PORTAL_MEDIA_FOLDER_ID') || '1okSDn88WJNYUSQe7YZB6C7o2oaCs_wPq';
+    return DriveApp.getFolderById(portalMediaId);
+  }
   if (folderKey === 'pentadbiran') {
     var pentadbiranId = props.getProperty('PENTADBIRAN_FOLDER_ID');
     if (!pentadbiranId) throw new Error('PENTADBIRAN_FOLDER_ID belum ditetapkan.');
