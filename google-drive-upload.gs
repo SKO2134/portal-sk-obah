@@ -43,7 +43,6 @@ function uploadFile_(body, identity) {
   var safeName = String(body.fileName || ('aktiviti-' + Date.now())).replace(/[^a-zA-Z0-9._-]/g, '_');
   var file = folder.createFile(Utilities.newBlob(bytes, body.mimeType, Date.now() + '-' + safeName));
   file.setDescription('portal-sk-obah:' + identity.uid);
-  file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
   return { ok: true, fileId: file.getId(), url: 'https://drive.google.com/uc?export=view&id=' + encodeURIComponent(file.getId()) };
 }
 
