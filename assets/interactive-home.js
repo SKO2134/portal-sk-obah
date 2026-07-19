@@ -1,5 +1,3 @@
-document.head.insertAdjacentHTML('beforeend','<link rel="stylesheet" href="assets/home-interactive.css">');
-
 const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const configs=[
   {id:'newsList',label:'Berita sekolah',interval:5200},
@@ -8,7 +6,8 @@ const configs=[
 
 function move(rail,direction){
   const card=rail.querySelector(':scope > article');
-  const distance=(card?.getBoundingClientRect().width||320)+18;
+  const gap=parseFloat(getComputedStyle(rail).gap)||18;
+  const distance=(card?.getBoundingClientRect().width||320)+gap;
   const atEnd=rail.scrollLeft+rail.clientWidth>=rail.scrollWidth-12;
   const atStart=rail.scrollLeft<=12;
   if(direction>0&&atEnd)rail.scrollTo({left:0,behavior:'smooth'});
