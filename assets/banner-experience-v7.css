@@ -27,7 +27,7 @@
 }
 .school-hero .feature-rotator .rotator-slide.is-active{transform:scale(1);filter:saturate(1.04)}
 .school-hero .category-card .rotator-slide{transition:opacity .72s ease,transform 4.8s ease}
-.school-hero .hero-button-primary,.school-hero .hero-button-login{font-weight:850}
+.school-hero .hero-button-primary,.school-hero .hero-button-profile{font-weight:850}
 .school-hero .hero-button-ghost,.school-hero .hero-button-facebook{box-shadow:inset 0 1px rgba(255,255,255,.16)}
 @keyframes heroProgress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @media(max-width:720px){

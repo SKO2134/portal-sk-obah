@@ -30,6 +30,6 @@
 @media(max-width:580px){#dashboard.dashboard-compact{padding:28px 0}#dashboard.dashboard-compact .section-head>div{display:block}#dashboard.dashboard-compact .section-sub{margin-top:5px}#dashboard.dashboard-compact .grid-4{grid-template-columns:1fr}#dashboard.dashboard-compact .card{min-height:92px}}
 .school-hero,.values-ticker,.school-statistics{width:100%;max-width:none;margin-left:0;margin-right:0;border-radius:0}
 .school-hero{margin-top:0}
-.school-hero .hero-grid{width:min(1280px,92%);max-width:1280px}
+.school-hero .hero-grid{width:min(1720px,calc(100% - 32px));max-width:1720px}
 .values-ticker{margin-top:0}
 @media(max-width:940px){.school-hero,.values-ticker,.school-statistics{width:100%}.school-hero .hero-grid{width:92%}}
