@@ -27,7 +27,7 @@ const defaults = {
 };
 
 const esc=(s='')=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
-const safeUrl=(url='')=>{try{const u=new URL(url,location.href);return ['http:','https:'].includes(u.protocol)?u.href:(url.startsWith('#')||url.endsWith('.html')?url:'#')}catch{return '#'}};
+const safeUrl=(url='')=>{try{const u=new URL(url,location.href);if(!['http:','https:'].includes(u.protocol))return url.startsWith('#')||url.endsWith('.html')?url:'#';if(/(^|\.)drive\.google\.com$/i.test(u.hostname)){let id=u.searchParams.get('id');if(!id){const match=u.pathname.match(/\/d\/([^/]+)/);id=match&&match[1]}if(id)return `https://drive.google.com/thumbnail?id=${encodeURIComponent(id)}&sz=w2000`}return u.href}catch{return '#'}};
 const dateValue=v=>v?.toDate?v.toDate():v?.seconds?new Date(v.seconds*1000):new Date(v||Date.now());
 const formatDate=v=>dateValue(v).toLocaleDateString('ms-MY',{day:'numeric',month:'long',year:'numeric'});
 
