@@ -14,6 +14,18 @@ function doPost(e) {
   }
 }
 
+/**
+ * Jalankan fungsi ini SEKALI dari editor Apps Script untuk memberi projek
+ * kebenaran menggunakan DriveApp. Selepas berjaya, deploy versi web app baharu.
+ */
+function authorizeDrive() {
+  var props = PropertiesService.getScriptProperties();
+  var folderId = props.getProperty('PORTAL_MEDIA_FOLDER_ID') || '1okSDn88WJNYUSQe7YZB6C7o2oaCs_wPq';
+  var folder = DriveApp.getFolderById(folderId);
+  Logger.log('Akses Google Drive berjaya: ' + folder.getName());
+  return folder.getName();
+}
+
 function verifyFirebaseUser_(token) {
   if (!token) throw new Error('Token Firebase tidak diterima. Sila log masuk semula.');
   var props = PropertiesService.getScriptProperties();
